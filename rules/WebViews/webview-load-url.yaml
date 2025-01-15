@@ -15,4 +15,5 @@ rules:
     message: >-
       This Android mobile application seems to load URLs in webviews. Consider checking if this URL is loaded in a secured way.
     pattern-either:  
-      - pattern: loadUrl
+      - pattern: $WEBVIEW.loadUrl(...)
+      - pattern: loadUrl(...)
