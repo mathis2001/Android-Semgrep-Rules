@@ -1,0 +1,21 @@
+rules:
+  - id: unsecure_exported_activity
+    severity: WARNING
+    languages:
+      - xml
+    metadata:
+      category: security
+      confidence: HIGH
+      likelihood: MEDIUM
+      impact: MEDIUM
+      subcategory:
+        - vuln
+      references:
+        - https://developer.android.com/privacy-and-security/risks/strandhogg
+    message: >-
+      This Android mobile application seems to be vulnerable to task hijacking.
+      The StrandHogg attack / Task Affinity vulnerability was enabled / caused by a design bug in the way Android handled multiple tasks, specifically the feature called task reparenting. 
+      Application task reparenting is a feature that allows an application to move an activity from one task to another.
+    pattern-either:
+      - pattern: |
+          <activity ... android:launchMode="singleTask" ... />
