@@ -1,0 +1,19 @@
+rules:
+  - id: debug-mode-enabled
+    severity: WARNING
+    languages:
+      - xml
+    metadata:
+      category: security
+      confidence: HIGH
+      likelihood: MEDIUM
+      impact: MEDIUM
+      subcategory:
+        - vuln
+      references:
+        - https://mas.owasp.org/MASTG/best-practices/MASTG-BEST-0007/
+    message: >-
+      This Android mobile application accept the attachment of a debugger to it.
+    pattern-either:
+      - pattern: |
+          <application ... android:debuggable="true" ... />
