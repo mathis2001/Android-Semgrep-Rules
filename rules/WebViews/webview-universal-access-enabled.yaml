@@ -1,0 +1,19 @@
+rules:
+  - id: webview-universal-access-enabled
+    severity: WARNING
+    languages: 
+      - java
+    metadata:
+      category: security
+      confidence: HIGH
+      likelihood: HIGH
+      impact: HIGH
+      subcategory:
+        - vuln
+      references:
+        - https://developer.android.com/reference/android/webkit/WebSettings#setAllowUniversalAccessFromFileURLs(boolean)
+    message: >-
+      This Android mobile application seems to be allowing Universal Access From File URLs in WebView, which could expose to various kind of vulnerabilities.
+    pattern-either:  
+      - pattern: (WebSettings $S).setAllowUniversalAccessFromFileURLs(true)
+      - pattern: $X.setAllowUniversalAccessFromFileURLs(true)
