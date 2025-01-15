@@ -1,0 +1,25 @@
+rules:
+  - id: deeplinks
+    severity: WARNING
+    languages:
+      - xml
+    metadata:
+      category: security
+      confidence: HIGH
+      likelihood: LOW
+      impact: LOW
+      subcategory:
+        - info
+      references:
+        - https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0028/
+    message: >-
+      This Android mobile application seems to use deeplinks. Consider checking if they are handled in a secure way and if they are present in assets links on the web side.
+    pattern-either:
+      - pattern: |
+          <data ... android:scheme= ... />
+      - pattern: |
+          <data ... android:host= ... />
+      - pattern: |
+          <data ... android:pathPrefix= ... />
+      - pattern: |
+          <data ... android:path= ... />
