@@ -1,0 +1,19 @@
+rules:
+  - id: backup-enabled
+    severity: WARNING
+    languages:
+      - xml
+    metadata:
+      category: security
+      confidence: HIGH
+      likelihood: MEDIUM
+      impact: MEDIUM
+      subcategory:
+        - vuln
+      references:
+        - https://mas.owasp.org/MASTG/best-practices/MASTG-BEST-0004/
+    message: >-
+      This Android mobile application accept to backup data. Consider checking if there is backup rules in a backup_rules.xml file and if sensitive data can be backed up.
+    pattern-either:
+      - pattern: |
+          <application ... android:allowBackup="true" ... />
