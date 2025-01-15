@@ -15,5 +15,8 @@ rules:
     message: >-
       This Android mobile application seems to allow JavaScript running in the context of a file scheme URL to access content from other file scheme URLs. 
       The default value is true for Android 4.0.3 - 4.0.4 (API level 15) and below and false for Android 4.1 (API level 16) and above.
-    pattern-either:  
-      - pattern: setAllowUniversalAccessFromFileURLs(true)
+    pattern-either: 
+      - pattern: $WEBVIEW.setAllowUniversalAccessFromFileURLs(...)
+      - pattern: setAllowUniversalAccessFromFileURLs(...)
+      - pattern: allowUniversalAccessFromFileURLs = ...
+      - pattern: $OBJ.allowUniversalAccessFromFileURLs = ...
