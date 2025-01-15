@@ -22,4 +22,12 @@ rules:
       This Android mobile application seems to be allowing JavaScript execution in WebView, which could expose to various kind of vulnerabilities.
       If JavaScript is required for the application to function normally, please ensure that the application follows the all best practices.
     pattern-either:  
-      - pattern: setJavaScriptEnabled(true)
+      - pattern: $OBJ.addJavascriptInterface(...)
+      - pattern: addJavascriptInterface(...)
+      - pattern: |
+          @JavascriptInterface
+          fun $METHOD(...) { ... }
+      - pattern: $OBJ.setJavaScriptEnabled(...)
+      - pattern: setJavaScriptEnabled(...)
+      - pattern: javaScriptEnabled =  ...
+      - pattern: $OBJ.javaScriptEnabled = ...
