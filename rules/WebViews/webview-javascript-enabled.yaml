@@ -1,5 +1,5 @@
 rules:
-  - id: insecure_javascript_execution
+  - id: webview-javascript-enabled
     severity: WARNING
     languages: 
       - java
