@@ -17,5 +17,4 @@ rules:
       The default value is true when targeting Android 10 (API level 29) and below and false for Android 11 (API level 30) and above. 
       Note that this enables and disables file system access only. Asset and resource access is unaffected and accessible via file:///android_asset and file:///android_res
     pattern-either:  
-      - pattern: (WebSettings $S).setAllowFileAccess(true)
-      - pattern: $X.setAllowFileAccess(true)
+      - pattern: setAllowFileAccess(true)
