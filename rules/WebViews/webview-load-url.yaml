@@ -2,7 +2,7 @@ rules:
   - id: webview-load-url
     severity: WARNING
     languages: 
-      - java
+      - kotlin
     metadata:
       category: security
       confidence: HIGH
