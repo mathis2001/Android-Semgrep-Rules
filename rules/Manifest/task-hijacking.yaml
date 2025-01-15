@@ -1,5 +1,5 @@
 rules:
-  - id: unsecure_exported_activity
+  - id: task-hijacking
     severity: WARNING
     languages:
       - xml
