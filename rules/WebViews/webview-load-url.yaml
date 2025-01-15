@@ -1,0 +1,18 @@
+rules:
+  - id: webview-load-url
+    severity: WARNING
+    languages: 
+      - java
+    metadata:
+      category: security
+      confidence: HIGH
+      likelihood: HIGH
+      impact: LOW
+      subcategory:
+        - vuln
+      references:
+        - https://github.com/OWASP/owasp-mstg/blob/master/Document/0x05h-Testing-Platform-Interaction.md
+    message: >-
+      This Android mobile application seems to load URLs in webviews. Consider checking if this URL is loaded in a secured way.
+    pattern-either:  
+      - pattern: $WEBVIEW.loadUrl(...)
