@@ -2,7 +2,7 @@ rules:
   - id: webview-file-access-enabled
     severity: WARNING
     languages: 
-      - java
+      - kotlin
     metadata:
       category: security
       confidence: HIGH
