@@ -16,4 +16,4 @@ rules:
       This Android mobile application accept to backup data. Consider checking if there is backup rules in a backup_rules.xml file and if sensitive data can be backed up.
     pattern-either:
       - pattern: |
-          <application ... android:allowBackup="true" ... />
+          android:allowBackup="true"
